@@ -106,7 +106,7 @@ const Hero = () => {
           </p>
 
           <h1 className="text-5xl font-extrabold leading-tight text-gray-900">
-            Vasanth Lakshman <br />
+            Jada Lakshman <br />
 
             {/* Animated Full Stack Developer */}
             <span className="inline-block mt-2">

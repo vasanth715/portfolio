@@ -96,18 +96,18 @@ const projectsData = [
   },
   {
     title: "AI Resume Screener",
-    image: "/assets/teaching.png",
+    image: "/teaching.png",
     tech: ["Java", "NLP"],
     github: "#",
     live: "#",
     category: "fullstack",
   },
   {
-    title: "Energy Anomaly Detection",
-    image: "/assets/teaching.png",
-    tech: ["Python", "ML"],
+    title: "slns Website",
+    image: "/slns.png",
+    tech: ["React", "Twailwind"],
     github: "#",
-    live: "#",
+    live: "https://slns-visa-website.vercel.app/",
     category: "others",
   },
   {
