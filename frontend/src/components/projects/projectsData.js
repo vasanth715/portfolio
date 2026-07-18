@@ -1,121 +1,97 @@
-// // src/components/projects/projectsData.js
-
-// import ai from "../../assets/ai.png";
-// import backend from "../../assets/backend.png";
-// import design from "../../assets/design.png";
-// import fullstack from "../../assets/fullstack.png";
-
-// export const projectsData = [
-//   {
-//     id: 1,
-//     title: "AI Resume Screening",
-//     image: ai,
-//     tech: ["Python", "NLP", "ML"],
-//     github: "#",
-//     live: "#",
-//   },
-//   {
-//     id: 2,
-//     title: "Employee Record System",
-//     image: backend,
-//     tech: ["Java", "MySQL"],
-//     github: "#",
-//     live: "#",
-//   },
-//   {
-//     id: 3,
-//     title: "Portfolio Website",
-//     image: design,
-//     tech: ["React", "Tailwind"],
-//     github: "#",
-//     live: "#",
-//   },
-//   {
-//     id: 4,
-//     title: "Energy Anomaly Detection",
-//     image: fullstack,
-//     tech: ["Python", "ML"],
-//     github: "#",
-//     live: "#",
-//   },
-// ];
-   
-
-
-
-
+// Set image to null for projects without a screenshot — the card renders a
+// styled gradient cover instead. Links set to null are hidden on the card.
 const projectsData = [
-
-   {
-    title: "Realestate Website",
+  {
+    title: "Sri Bhoomi Developers",
+    description:
+      "Production real-estate website for a property developer — listings, gallery and lead capture.",
     image: "/sribhoomi.png",
-    tech: ["React", "Tailwind"],
-    github: "#",
+    tech: ["React", "Tailwind CSS"],
+    github: null,
     live: "https://sribhoomidevelopers.com/",
     category: "frontend",
+    featured: true,
   },
   {
-    title: "Realestate Website",
+    title: "CodingRoots — Company Website",
+    description:
+      "Corporate website for a software training company with courses, team and enquiry flows.",
+    image: "/codingroots.png",
+    tech: ["React", "Tailwind CSS"],
+    github: null,
+    live: "https://codingroots.in",
+    category: "frontend",
+    featured: true,
+  },
+  {
+    title: "RunBro Real Estate",
+    description:
+      "Modern real-estate landing experience with property showcases and responsive layouts.",
     image: "/runbro.png",
-    tech: ["React", "Tailwind"],
-    github: "#",
+    tech: ["React", "Tailwind CSS"],
+    github: null,
     live: "https://melodious-eclair-19f514.netlify.app",
     category: "frontend",
   },
   {
-    title: "vsn-interiors Website",
+    title: "VSN Interiors",
+    description:
+      "Portfolio website for an interior design studio — project galleries and service pages.",
     image: "/vsn-interiors.png",
-    tech: ["React", "Tailwind"],
-    github: "#",
+    tech: ["React", "Tailwind CSS"],
+    github: null,
     live: "https://celebrated-florentine-995c67.netlify.app/",
     category: "frontend",
   },
-   {
-    title: "NCK Interiors Website",
+  {
+    title: "NCK Interiors",
+    description:
+      "Interior design brand site with rich imagery, service breakdowns and contact funnels.",
     image: "/nck-interiors.png",
-    tech: ["React", "Tailwind"],
-    github: "#",
+    tech: ["React", "Tailwind CSS"],
+    github: null,
     live: "https://exquisite-crumble-be8d28.netlify.app",
     category: "frontend",
   },
   {
-    title: "CodingRootscompanywebsite",
-    image: "/codingroots.png",
-    tech: ["React", "Tailwind"],
-    github: "#",
-    live: "https://codingroots.in",
-    category: "frontend",
-  },
-  {
-    title: "Sports E-commerce UI",
-    image: "/assets/teaching.png",
-    tech: ["React", "Tailwind"],
-    github: "#",
-    live: "#",
+    title: "SLNS Visa Consultancy",
+    description:
+      "Website for a visa consultancy — services, country guides and enquiry handling.",
+    image: "/slns.png",
+    tech: ["React", "Tailwind CSS"],
+    github: null,
+    live: "https://slns-visa-website.vercel.app/",
     category: "frontend",
   },
   {
     title: "AI Resume Screener",
-    image: "/teaching.png",
-    tech: ["Java", "NLP"],
-    github: "#",
-    live: "#",
+    description:
+      "NLP-powered system that parses resumes and ranks candidates against job descriptions.",
+    image: null,
+    tech: ["Java", "NLP", "ML"],
+    github: null,
+    live: null,
+    category: "fullstack",
+    featured: true,
+  },
+  {
+    title: "Energy Anomaly Detection",
+    description:
+      "Unsupervised machine-learning pipeline detecting anomalies in energy-consumption data.",
+    image: null,
+    tech: ["Python", "ML"],
+    github: null,
+    live: null,
     category: "fullstack",
   },
   {
-    title: "slns Website",
-    image: "/slns.png",
-    tech: ["React", "Twailwind"],
-    github: "#",
-    live: "https://slns-visa-website.vercel.app/",
-    category: "others",
-  },
-  {
-    title: "Portfolio Website",
-    image: "/assets/teaching.png",
-    tech: ["React", "UI"],
-    github: "#",
-    live: "#",
+    title: "Sports E-commerce UI",
+    description:
+      "E-commerce storefront concept for sports gear — product grids, carts and checkout UI.",
+    image: null,
+    tech: ["React", "Tailwind CSS"],
+    github: null,
+    live: null,
     category: "frontend",
   },
 ];

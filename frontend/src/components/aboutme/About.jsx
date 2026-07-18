@@ -1,62 +1,110 @@
+import { Code2, Database, Brain, Rocket } from "lucide-react";
+import SectionHeading from "../shared/SectionHeading";
+import Reveal from "../shared/Reveal";
+
+const highlights = [
+  {
+    icon: Code2,
+    title: "Full-Stack Development",
+    text: "End-to-end web apps with React, Node.js, Express and Spring Boot.",
+  },
+  {
+    icon: Database,
+    title: "Data & Backend",
+    text: "Robust REST APIs, MySQL schemas and scalable server-side logic in Java.",
+  },
+  {
+    icon: Brain,
+    title: "AI / ML Projects",
+    text: "Applied ML work — anomaly detection and AI-based resume screening.",
+  },
+  {
+    icon: Rocket,
+    title: "Shipping for Clients",
+    text: "6+ live production websites delivered for real businesses.",
+  },
+];
+
 const About = () => {
   return (
-    <section
-      id="aboutme"
-      className="w-full bg-[#f9fbe7] py-20 px-6"
-    >
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
-        
-        {/* Left Side – Text */}
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-6">
-            About Me
-          </h2>
+    <section id="aboutme" className="relative w-full py-24">
+      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-teal-500/10 blur-[100px]" />
 
-          <p className="text-gray-700 text-lg leading-relaxed mb-5">
-            I am <span className="font-semibold text-green-700">Lakshmanarao Jada</span>, 
-            an Associate Engineer with a strong foundation in software development, 
-            problem-solving, and modern web technologies.
-          </p>
+      <div className="relative mx-auto max-w-6xl px-6">
+        <SectionHeading
+          eyebrow="About Me"
+          title="Engineer. Builder. Lifelong Learner."
+        />
 
-          <p className="text-gray-700 leading-relaxed mb-5">
-            I have completed my <span className="font-semibold">MCA</span> and have hands-on
-            experience working with <span className="font-semibold">Java, MySQL, React,Node,Express</span>, and 
-            <span className="font-semibold"> AI/ML-based projects</span>. I enjoy building scalable
-            applications and AdminDashboards and learning new technologies that solve real-world problems.
-          </p>
+        <div className="grid items-start gap-14 md:grid-cols-2">
+          {/* Left – story */}
+          <Reveal>
+            <p className="text-lg leading-relaxed text-slate-300">
+              I&rsquo;m{" "}
+              <span className="font-semibold text-emerald-300">
+                Lakshmanarao Jada
+              </span>
+              , an Associate Engineer with a strong foundation in software
+              development, problem-solving and modern web technologies.
+            </p>
 
-          <p className="text-gray-700 leading-relaxed">
-            I have worked on projects such as <span className="font-semibold">
-            Unsupervised Anomaly Detection in Energy Consumption</span>, 
-            <span className="font-semibold"> Employee Record Systems,Dashboards,Websites </span>, and 
-            an <span className="font-semibold">AI-based Resume Screening System</span>.
-            I believe in continuous learning, clean code, and collaborative development.
-          </p>
-        </div>
+            <p className="mt-5 leading-relaxed text-slate-400">
+              I hold an <span className="font-medium text-slate-200">MCA</span>{" "}
+              and work hands-on with{" "}
+              <span className="font-medium text-slate-200">
+                Java, Spring Boot, React, Node.js, Express and MySQL
+              </span>
+              , alongside applied{" "}
+              <span className="font-medium text-slate-200">AI/ML</span>{" "}
+              projects. I enjoy building scalable applications, admin
+              dashboards and products that solve real-world problems.
+            </p>
 
-        {/* Right Side – Info Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          
-          <div className="bg-white border border-green-200 rounded-xl p-6 shadow-sm">
-            <h4 className="text-green-700 font-semibold mb-2">Role</h4>
-            <p className="text-gray-600">Associate Engineer</p>
+            <p className="mt-5 leading-relaxed text-slate-400">
+              Recent work includes{" "}
+              <span className="font-medium text-slate-200">
+                Unsupervised Anomaly Detection in Energy Consumption
+              </span>
+              , an{" "}
+              <span className="font-medium text-slate-200">
+                AI-based Resume Screening System
+              </span>{" "}
+              and multiple production client websites. I believe in continuous
+              learning, clean code and collaborative development.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {["Java", "Spring Boot", "React", "Node.js", "MySQL", "AI/ML"].map(
+                (chip) => (
+                  <span
+                    key={chip}
+                    className="rounded-full border border-emerald-400/25 bg-emerald-400/5 px-4 py-1.5 text-sm text-emerald-300"
+                  >
+                    {chip}
+                  </span>
+                )
+              )}
+            </div>
+          </Reveal>
+
+          {/* Right – highlight cards */}
+          <div className="grid gap-5 sm:grid-cols-2">
+            {highlights.map((h, i) => (
+              <Reveal key={h.title} delay={i * 0.1}>
+                <div className="glass-card group h-full p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-400/40 hover:bg-emerald-400/5">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-cyan-400/10 text-emerald-300 transition-transform duration-300 group-hover:scale-110">
+                    <h.icon size={24} />
+                  </div>
+                  <h4 className="font-display font-semibold text-white">
+                    {h.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                    {h.text}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
           </div>
-
-          <div className="bg-white border border-green-200 rounded-xl p-6 shadow-sm">
-            <h4 className="text-green-700 font-semibold mb-2">Education</h4>
-            <p className="text-gray-600">MCA (Completed)</p>
-          </div>
-
-          <div className="bg-white border border-green-200 rounded-xl p-6 shadow-sm">
-            <h4 className="text-green-700 font-semibold mb-2">Tech Stack</h4>
-            <p className="text-gray-600">Java, React, MySQL, Node.js, Express, AI/ML</p>
-          </div>
-
-          <div className="bg-white border border-green-200 rounded-xl p-6 shadow-sm">
-            <h4 className="text-green-700 font-semibold mb-2">Location</h4>
-            <p className="text-gray-600">Andhra Pradesh, India</p>
-          </div>
-
         </div>
       </div>
     </section>

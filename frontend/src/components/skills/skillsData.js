@@ -6,16 +6,17 @@ import {
   Palette,
   Brain,
   Github,
+  FileCode2,
+  Braces,
 } from "lucide-react";
 
 export const categories = [
   "All",
+  "Languages",
   "Frontend",
   "Backend",
-  "Styling",
-  "Frameworks",
-  "Languages",
-  "SoftSkills",
+  "Tools",
+  "Soft Skills",
 ];
 
 export const skillsData = [
@@ -23,66 +24,59 @@ export const skillsData = [
     name: "Java",
     category: "Languages",
     icon: Code2,
-    topics: ["OOP", "JDBC", "Spring Basics"],
+    topics: ["OOP", "JDBC", "Collections"],
   },
   {
     name: "JavaScript",
     category: "Languages",
-    icon: Code2,
+    icon: Braces,
     topics: ["ES6+", "DOM", "Async/Await"],
   },
   {
     name: "Python",
     category: "Languages",
-    icon: Code2,
-    topics: ["Basics", "ML Intro", "Automation"],
+    icon: FileCode2,
+    topics: ["ML Basics", "Automation", "Scripting"],
   },
-
   {
     name: "React.js",
     category: "Frontend",
     icon: Layout,
     topics: ["Components", "Hooks", "Routing"],
   },
-
   {
     name: "Tailwind CSS",
-    category: "Styling",
+    category: "Frontend",
     icon: Palette,
-    topics: ["Responsive UI", "Animations", "Utility Classes"],
+    topics: ["Responsive UI", "Animations", "Design Systems"],
   },
-
   {
-    name: "Node.js",
+    name: "Node.js & Express",
     category: "Backend",
     icon: Server,
-    topics: ["APIs", "Middleware", "Auth"],
+    topics: ["REST APIs", "Middleware", "Auth"],
   },
-
   {
     name: "Spring Boot",
-    category: "Frameworks",
+    category: "Backend",
     icon: Server,
     topics: ["REST APIs", "MVC", "Security"],
   },
-
   {
     name: "MySQL",
     category: "Backend",
     icon: Database,
-    topics: ["Queries", "Joins", "CRUD"],
+    topics: ["Queries", "Joins", "Schema Design"],
   },
-
   {
-    name: "GitHub",
-    category: "Frameworks",
+    name: "Git & GitHub",
+    category: "Tools",
     icon: Github,
-    topics: ["Version Control", "Collaboration", "Projects"],
+    topics: ["Version Control", "Collaboration", "CI Basics"],
   },
-
   {
     name: "Problem Solving",
-    category: "SoftSkills",
+    category: "Soft Skills",
     icon: Brain,
     topics: ["DSA Practice", "Logical Thinking", "Debugging"],
   },

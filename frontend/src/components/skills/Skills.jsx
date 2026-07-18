@@ -1,60 +1,60 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import SkillCard from "./SkillCard";
+import SectionHeading from "../shared/SectionHeading";
 import { skillsData, categories } from "./skillsData";
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  // Filter Logic
   const filteredSkills =
     activeCategory === "All"
       ? skillsData
       : skillsData.filter((skill) => skill.category === activeCategory);
 
   return (
-    <section
-      id="skills"
-      className="w-full py-20 bg-gradient-to-b from-white to-green-50"
-    >
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="skills" className="relative w-full py-24">
+      <div className="pointer-events-none absolute left-0 top-1/3 h-72 w-72 rounded-full bg-cyan-500/10 blur-[110px]" />
 
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-gray-900">
-            Skills
-          </h2>
-          <p className="text-gray-600 mt-3">
-            Click categories to explore my expertise
-          </p>
-        </div>
+      <div className="relative mx-auto max-w-6xl px-6">
+        <SectionHeading
+          eyebrow="Skills"
+          title="My Technical Toolbox"
+          subtitle="The languages, frameworks and tools I use to bring ideas to life."
+        />
 
-        {/* Category Navbar */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((cat, index) => (
+        {/* Category filter */}
+        <div className="mb-12 flex flex-wrap justify-center gap-3">
+          {categories.map((cat) => (
             <button
-              key={index}
+              key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`
-                px-5 py-2 rounded-full font-medium text-sm
-                transition-all duration-300
-                ${
-                  activeCategory === cat
-                    ? "bg-green-700 text-white shadow-md"
-                    : "bg-white border border-green-200 text-green-700 hover:bg-green-100"
-                }
-              `}
+              className={`relative rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
+                activeCategory === cat
+                  ? "text-night-950"
+                  : "border border-white/10 bg-white/5 text-slate-300 hover:border-emerald-400/40 hover:text-white"
+              }`}
             >
-              {cat}
+              {activeCategory === cat && (
+                <motion.span
+                  layoutId="skill-filter-pill"
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 shadow-lg shadow-emerald-500/25"
+                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                />
+              )}
+              <span className="relative">{cat}</span>
             </button>
           ))}
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {filteredSkills.map((skill, index) => (
-            <SkillCard key={index} skill={skill} />
-          ))}
-        </div>
+        {/* Skills grid */}
+        <motion.div layout className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatePresence mode="popLayout">
+            {filteredSkills.map((skill) => (
+              <SkillCard key={skill.name} skill={skill} />
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

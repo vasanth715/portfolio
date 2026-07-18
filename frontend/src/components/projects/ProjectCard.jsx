@@ -1,327 +1,102 @@
-// // src/components/projects/ProjectCard.jsx
-
-// export default function ProjectCard({ project }) {
-//   return (
-//    <div
-//   className="
-//     w-[90%] max-w-[360px]
-//     h-[460px]
-//     bg-white/5 backdrop-blur-lg
-//     border border-white/10 rounded-2xl
-//     overflow-hidden shadow-xl
-//     hover:scale-105 transition-transform duration-300
-//   "
-// >
-
-
-//       {/* Image */}
-//       <img
-//         src={project.image}
-//         alt={project.title}
-//         className="w-full h-56 object-cover"
-
-//       />
-
-//       {/* Content */}
-//       <div className="p-4 text-white">
-//         <h3 className="text-lg font-semibold mb-2">
-//           {project.title}
-//         </h3>
-
-//         <div className="flex flex-wrap gap-2 mb-4">
-//           {project.tech.map((tech, index) => (
-//             <span
-//               key={index}
-//               className="text-xs px-2 py-1 rounded-full
-//                          bg-white/10 border border-white/20"
-//             >
-//               {tech}
-//             </span>
-//           ))}
-//         </div>
-
-//         <div className="flex gap-3">
-//           <a
-//             href={project.github}
-//             className="text-sm px-4 py-2 rounded-lg
-//                        bg-white/10 hover:bg-white/20 transition"
-//           >
-//             GitHub
-//           </a>
-//           <a
-//             href={project.live}
-//             className="text-sm px-4 py-2 rounded-lg
-//                        bg-green-500/80 hover:bg-green-500 transition"
-//           >
-//             Live
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
-// src/components/projects/ProjectCard.jsx
-
-// export default function ProjectCard({ project }) {
-//   return (
-//     <div
-//       className="
-//         w-[90%] max-w-[360px]
-//         h-[480px]
-//         bg-white/5 backdrop-blur-lg
-//         border border-white/10 rounded-2xl
-//         overflow-hidden shadow-xl
-//         hover:scale-105 transition-transform duration-300
-//         flex flex-col
-//       "
-//     >
-//       {/* IMAGE – MAX SPACE */}
-//       <div className="flex-1">
-//         <img
-//           src={project.image}
-//           alt={project.title}
-//           className="w-full h-full object-cover"
-//         />
-//       </div>
-
-//       {/* BOTTOM CONTENT */}
-//       <div className="p-4 text-white bg-black/70 backdrop-blur-md">
-//         <h3 className="text-lg font-semibold mb-2">
-//           {project.title}
-//         </h3>
-
-//         {/* TECH STACK */}
-//         <div className="flex flex-wrap gap-2 mb-3">
-//           {project.tech.map((tech, index) => (
-//             <span
-//               key={index}
-//               className="
-//                 text-xs px-2 py-1 rounded-full
-//                 bg-white/10 border border-white/20
-//               "
-//             >
-//               {tech}
-//             </span>
-//           ))}
-//         </div>
-
-//         {/* ACTION BUTTONS */}
-//         <div className="flex gap-3">
-//           <a
-//             href={project.github}
-//             className="
-//               text-sm px-4 py-2 rounded-lg
-//               bg-white/10 hover:bg-white/20
-//               transition
-//             "
-//           >
-//             GitHub
-//           </a>
-
-//           <a
-//             href={project.live}
-//             className="
-//               text-sm px-4 py-2 rounded-lg
-//               bg-green-500/80 hover:bg-green-500
-//               transition
-//             "
-//           >
-//             Live
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-   
-
-
-
-// export default function ProjectCard({ project }) {
-//   return (
-//     <div
-//       className="
-//         w-[280px] h-[420px]
-//         bg-white/5 backdrop-blur-xl
-//         border border-white/10 rounded-2xl
-//         overflow-hidden
-//         shadow-lg hover:shadow-2xl
-//         hover:-translate-y-2
-//         transition-all duration-300
-//         flex flex-col
-//         group
-//       "
-//     >
-//       {/* IMAGE */}
-//       <div className="h-[55%] overflow-hidden">
-//         <img
-//           src={project.image}
-//           alt={project.title}
-//           className="
-//             w-full h-full object-cover
-//             group-hover:scale-110
-//             transition-transform duration-500
-//           "
-//         />
-//       </div>
-
-//       {/* CONTENT */}
-//       <div className="flex-1 p-4 flex flex-col justify-between bg-black/60 backdrop-blur-md text-white">
-        
-//         {/* TITLE */}
-//         <h3 className="text-md font-semibold tracking-wide">
-//           {project.title}
-//         </h3>
-
-//         {/* TECH STACK */}
-//         <div className="flex flex-wrap gap-1.5 mt-2">
-//           {project.tech.map((tech, index) => (
-//             <span
-//               key={index}
-//               className="
-//                 text-[10px] px-2 py-[2px]
-//                 rounded-full
-//                 bg-white/10 border border-white/20
-//                 text-gray-200
-//               "
-//             >
-//               {tech}
-//             </span>
-//           ))}
-//         </div>
-
-//         {/* BUTTONS */}
-//         <div className="flex gap-2 mt-3">
-//           <a
-//             href={project.github}
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="
-//               flex-1 text-center text-xs py-2 rounded-md
-//               bg-white/10 hover:bg-white/20
-//               border border-white/20
-//               transition-all duration-200
-//             "
-//           >
-//             GitHub
-//           </a>
-
-//           <a
-//             href={project.live}
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="
-//               flex-1 text-center text-xs py-2 rounded-md
-//               bg-gradient-to-r from-green-400 to-emerald-500
-//               hover:opacity-90
-//               text-black font-medium
-//               transition-all duration-200
-//             "
-//           >
-//             Live
-//           </a>
-//         </div>
-
-//       </div>
-//     </div>
-//   );
-// }   
-
-
-
-
+import { motion } from "framer-motion";
+import { Github, ExternalLink, FolderCode, Star } from "lucide-react";
 
 export default function ProjectCard({ project }) {
   return (
-    <div
-      className="
-        w-[260px] h-[380px]
-        bg-white/5 backdrop-blur-xl
-        border border-white/10 rounded-2xl
-        overflow-hidden
-        shadow-lg hover:shadow-2xl
-        hover:-translate-y-2
-        transition-all duration-300
-        flex flex-col
-        group
-      "
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.35 }}
+      className="glass-card group flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400/40 hover:shadow-2xl hover:shadow-emerald-500/10"
     >
-      {/* IMAGE */}
-      <div className="h-[55%] overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="
-            w-full h-full object-cover
-            group-hover:scale-110
-            transition-transform duration-500
-          "
-        />
+      {/* COVER */}
+      <div className="relative h-48 overflow-hidden">
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-emerald-500/20 via-night-800 to-cyan-500/15">
+            <FolderCode
+              size={52}
+              className="text-emerald-400/70 transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+        )}
+
+        <div className="absolute inset-0 bg-gradient-to-t from-night-950/80 via-transparent to-transparent" />
+
+        {project.featured && (
+          <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-emerald-400/90 px-2.5 py-1 text-[11px] font-bold text-night-950">
+            <Star size={11} className="fill-night-950" />
+            Featured
+          </span>
+        )}
+
+        {/* Hover action overlay */}
+        <div className="absolute inset-0 flex items-center justify-center gap-3 bg-night-950/60 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.title} on GitHub`}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-white/25 transition hover:scale-110 hover:bg-white/20"
+            >
+              <Github size={19} />
+            </a>
+          )}
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.title} live site`}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-400 text-night-950 transition hover:scale-110"
+            >
+              <ExternalLink size={19} />
+            </a>
+          )}
+        </div>
       </div>
 
       {/* CONTENT */}
-      <div className="flex-1 p-4 flex flex-col justify-between bg-black/60 text-white">
-        
-        <h3 className="text-sm font-semibold tracking-wide">
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="font-display font-semibold text-white transition-colors duration-300 group-hover:text-emerald-300">
           {project.title}
         </h3>
 
-        {/* TECH */}
-        <div className="flex flex-wrap gap-1.5 mt-2">
-          {project.tech.map((tech, i) => (
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
+          {project.description}
+        </p>
+
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          {project.tech.map((tech) => (
             <span
-              key={i}
-              className="
-                text-[10px] px-2 py-[2px]
-                rounded-full
-                bg-white/10 border border-white/20
-              "
+              key={tech}
+              className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-slate-300"
             >
               {tech}
             </span>
           ))}
+
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-auto flex items-center gap-1 text-xs font-semibold text-emerald-300 transition hover:text-emerald-200"
+            >
+              Live <ExternalLink size={12} />
+            </a>
+          )}
         </div>
-
-        {/* BUTTONS */}
-        <div className="flex gap-2 mt-3">
-          <a
-            href={project.github}
-            className="
-              flex-1 text-center text-xs py-2 rounded-md
-              bg-white/10 hover:bg-white/20
-              border border-white/20
-              transition
-            "
-          >
-            GitHub
-          </a>
-
-          <a
-            href={project.live}
-            className="
-              flex-1 text-center text-xs py-2 rounded-md
-              bg-gradient-to-r from-green-400 to-emerald-500
-              text-black font-medium
-              hover:opacity-90
-              transition
-            "
-          >
-            Live
-          </a>
-        </div>
-
       </div>
-    </div>
+    </motion.div>
   );
 }
