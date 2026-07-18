@@ -1,223 +1,66 @@
-// // src/components/socialmedia/FloatingSocialBar.jsx
-// import {
-//   Facebook,
-//   Instagram,
-//   Linkedin,
-//   X,
-//   PhoneCall,
-//   MessageCircle,
-// } from "lucide-react";
-
-// export default function FloatingSocialBar() {
-//   return (
-//     <div
-//       className="
-//         fixed top-1/2 left-4
-//         -translate-y-1/2
-//         flex flex-col gap-3
-//         z-50
-//       "
-//     >
-//       {/* Facebook */}
-//       <a
-//         href="https://facebook.com/"
-//         target="_blank"
-//         className="
-//           w-10 h-10 flex items-center justify-center
-//           bg-blue-600 text-white rounded
-//           hover:scale-110 transition
-//         "
-//       >
-//         <Facebook size={18} />
-//       </a>
-
-//       {/* Instagram */}
-//       <a
-//         href="https://instagram.com/"
-//         target="_blank"
-//         className="
-//           w-10 h-10 flex items-center justify-center
-//           bg-gradient-to-tr from-pink-500 to-yellow-400
-//           text-white rounded
-//           hover:scale-110 transition
-//         "
-//       >
-//         <Instagram size={18} />
-//       </a>
-
-//       {/* X (Twitter) */}
-//       <a
-//         href="https://x.com/"
-//         target="_blank"
-//         className="
-//           w-10 h-10 flex items-center justify-center
-//           bg-black text-white rounded
-//           hover:scale-110 transition
-//         "
-//       >
-//         <X size={18} />
-//       </a>
-
-//       {/* LinkedIn */}
-//       <a
-//         href="https://linkedin.com/"
-//         target="_blank"
-//         className="
-//           w-10 h-10 flex items-center justify-center
-//           bg-blue-700 text-white rounded
-//           hover:scale-110 transition
-//         "
-//       >
-//         <Linkedin size={18} />
-//       </a>
-
-//       {/* WhatsApp (ALL SCREENS) */}
-//       <a
-//         href="https://wa.me/917288041562"
-//         target="_blank"
-//         className="
-//           w-10 h-10 flex items-center justify-center
-//           bg-green-500 text-white rounded
-//           hover:scale-110 transition
-//         "
-//       >
-//         <MessageCircle size={18} />
-//       </a>
-
-//       {/* PHONE – ONLY MOBILE */}
-//       <a
-//         href="tel:+917288041562"
-//         className="
-//           md:hidden
-//           w-10 h-10 flex items-center justify-center
-//           bg-red-600 text-white rounded
-//           hover:scale-110 transition
-//         "
-//       >
-//         <PhoneCall size={18} />
-//       </a>
-//     </div>
-//   );
-// }
-
-
-
-
-
-// src/components/socialmedia/FloatingSocialBar.jsx
-
-
-
-
-
-
-// src/components/socialmedia/FloatingSocialBar.jsx
-
-import {
-  FaLinkedinIn,
-  FaGithub,
-  FaWhatsapp,
-  FaPhoneAlt,
-} from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+
+const links = [
+  {
+    icon: FaLinkedinIn,
+    href: "https://www.linkedin.com/",
+    label: "LinkedIn",
+    hover: "hover:text-[#0A66C2] hover:border-[#0A66C2]/60",
+  },
+  {
+    icon: FaGithub,
+    href: "https://github.com/vasanth715",
+    label: "GitHub",
+    hover: "hover:text-white hover:border-white/60",
+  },
+  {
+    icon: SiLeetcode,
+    href: "https://leetcode.com/u/vasanthlakshman",
+    label: "LeetCode",
+    hover: "hover:text-[#FFA116] hover:border-[#FFA116]/60",
+  },
+];
 
 export default function FloatingSocialBar() {
   return (
     <>
-      {/* LEFT SIDE SOCIAL ICONS (REAL BRAND ICONS) */}
-      <div
-        className="
-          fixed top-1/2 left-0
-          -translate-y-1/2
-          flex flex-col gap-3
-          z-50
-        "
-      >
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/"
-          target="_blank"
-          className="
-            w-12 h-12
-            flex items-center justify-center
-            bg-[#0A66C2]
-            text-white
-            rounded-r-xl
-            hover:scale-110 transition
-          "
-        >
-          <FaLinkedinIn size={22} />
-        </a>
-
-        {/* LeetCode */}
-        <a
-          href="https://leetcode.com/u/vasanthlakshman"
-          target="_blank"
-          className="
-            w-12 h-12
-            flex items-center justify-center
-            bg-black
-            text-[#FFA116]
-            rounded-r-xl
-            hover:scale-110 transition
-          "
-        >
-          <SiLeetcode size={22} />
-        </a>
-
-        {/* GitHub */}
-        <a
-          href="https://github.com/"
-          target="_blank"
-          className="
-            w-12 h-12
-            flex items-center justify-center
-            bg-[#181717]
-            text-white
-            rounded-r-xl
-            hover:scale-110 transition
-          "
-        >
-          <FaGithub size={22} />
-        </a>
+      {/* LEFT RAIL — desktop only */}
+      <div className="fixed bottom-0 left-6 z-40 hidden flex-col items-center gap-4 lg:flex">
+        {links.map((l) => (
+          <a
+            key={l.label}
+            href={l.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={l.label}
+            className={`flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-night-800/80 text-slate-400 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 ${l.hover}`}
+          >
+            <l.icon size={16} />
+          </a>
+        ))}
+        {/* vertical line to bottom */}
+        <span className="h-24 w-px bg-gradient-to-b from-white/20 to-transparent" />
       </div>
 
-      {/* WHATSAPP – RIGHT BOTTOM (ALL SCREENS) */}
+      {/* WHATSAPP — floating action button */}
       <a
         href="https://wa.me/917288041562"
         target="_blank"
-        className="
-          fixed bottom-6 right-6
-          w-14 h-14
-          flex items-center justify-center
-          bg-[#25D366]
-          text-white
-          rounded-full
-          shadow-xl
-          hover:scale-110 transition
-          z-50
-        "
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+        className="fixed bottom-6 right-6 z-40 flex items-center justify-center rounded-full bg-[#25D366] p-3.5 text-white shadow-xl shadow-[#25D366]/30 transition hover:scale-110"
       >
         <FaWhatsapp size={26} />
       </a>
 
-      {/* PHONE – ONLY SMALL SCREENS */}
+      {/* PHONE — small screens only */}
       <a
         href="tel:+917288041562"
-        className="
-          md:hidden
-          fixed bottom-24 right-6
-          w-14 h-14
-          flex items-center justify-center
-          bg-[#E53935]
-          text-white
-          rounded-full
-          shadow-xl
-          hover:scale-110 transition
-          z-50
-        "
+        aria-label="Call"
+        className="fixed bottom-24 right-6 z-40 flex items-center justify-center rounded-full bg-night-800 p-3.5 text-emerald-300 shadow-xl ring-1 ring-emerald-400/40 transition hover:scale-110 md:hidden"
       >
-        <FaPhoneAlt size={22} />
+        <FaPhoneAlt size={20} />
       </a>
     </>
   );

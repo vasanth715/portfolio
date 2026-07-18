@@ -1,142 +1,55 @@
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
-
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 
-
-
-
-/* 🔒 Prevent horizontal scroll globally */
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-
-
-/* Floating Animation for Profile */
-@keyframes floatUpDown {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+body {
+  @apply bg-night-950 font-sans text-slate-300 antialiased;
 }
 
-.animate-float {
-  animation: floatUpDown 4s ease-in-out infinite;
+::selection {
+  @apply bg-emerald-400/30 text-white;
 }
 
-/* Infinite Letter Bounce Animation */
-@keyframes letterBounceInfinite {
-  0% {
-    transform: translateY(-18px);
-    opacity: 0;
-    color: orange;
-  }
-
-  30% {
-    transform: translateY(10px);
-    opacity: 1;
-    color: orange;
-  }
-
-  60% {
-    transform: translateY(0px);
-    color: #15803d; /* Green Stable */
-  }
-
-  100% {
-    transform: translateY(0px);
-    color: #15803d;
-  }
+/* Slim custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05080f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
 }
 
-/* Each Letter Animation */
-.bounce-letter {
-  display: inline-block;
-  font-weight: 800;
-  font-size: 42px;
+@layer components {
+  /* Emerald→teal gradient headline text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent;
+  }
 
-  animation-name: letterBounceInfinite;
-  animation-duration: 3s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  /* Frosted card used across sections */
+  .glass-card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm;
+  }
+
+  /* Faint blueprint grid laid over section backgrounds */
+  .bg-grid {
+    background-image: linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
 }

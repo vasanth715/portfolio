@@ -1,193 +1,34 @@
-// import {
-//   MapPin,
-//   Mail,
-//   Phone,
-//   Github,
-//   Linkedin,
-//   Instagram,
-//   Youtube,
-// } from "lucide-react";
-
-// export default function Contact() {
-//   return (
-//     <section
-//       id="contact"
-//       className="bg-gray-50 py-20 px-6"
-//     >
-//       <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-2">
-
-//         {/* LEFT SIDE – FORM */}
-//         <div>
-//           <h2 className="text-4xl font-bold text-gray-900">
-//             Get in touch
-//           </h2>
-//           <p className="mt-3 text-gray-600">
-//             Have a question or just want to say hi? I’d love to hear from you.
-//           </p>
-
-//           <form className="mt-10 space-y-6">
-//             {/* Name + Email */}
-//             <div className="grid gap-6 md:grid-cols-2">
-//               <input
-//                 type="text"
-//                 placeholder="Name *"
-//                 className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-//               />
-//               <input
-//                 type="email"
-//                 placeholder="Email *"
-//                 className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-//               />
-//             </div>
-
-//             {/* Phone */}
-//             <input
-//               type="text"
-//               placeholder="Phone Number *"
-//               className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-//             />
-
-//             {/* Subject */}
-//             <input
-//               type="text"
-//               placeholder="Subject"
-//               className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-//             />
-
-//             {/* Message */}
-//             <textarea
-//               rows="5"
-//               placeholder="Enter your message"
-//               className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-//             ></textarea>
-
-//             {/* Submit */}
-//             <button
-//               type="submit"
-//               className="
-//                 bg-green-600 text-white
-//                 px-6 py-3 rounded-lg
-//                 font-medium
-//                 hover:bg-green-700
-//                 transition
-//               "
-//             >
-//               Send Your Message
-//             </button>
-//           </form>
-//         </div>
-
-//         {/* RIGHT SIDE – CONTACT INFO */}
-//         <div className="bg-white rounded-2xl shadow-lg p-8 space-y-8">
-
-//           {/* Location */}
-//           <div className="flex gap-4">
-//             <MapPin className="text-green-600" />
-//             <div>
-//               <h4 className="font-semibold text-gray-900">
-//                 Location
-//               </h4>
-//               <p className="text-gray-600 text-sm">
-//                 Andhra Pradesh, India
-//               </p>
-//             </div>
-//           </div>
-
-//           {/* Email */}
-//           <div className="flex gap-4">
-//             <Mail className="text-green-600" />
-//             <div>
-//               <h4 className="font-semibold text-gray-900">
-//                 Email
-//               </h4>
-//               <p className="text-gray-600 text-sm">
-//                 vasanthlakshmanjada@gmail.com
-//               </p>
-//             </div>
-//           </div>
-
-//           {/* Phone */}
-//           <div className="flex gap-4">
-//             <Phone className="text-green-600" />
-//             <div>
-//               <h4 className="font-semibold text-gray-900">
-//                 Phone
-//               </h4>
-//               <p className="text-gray-600 text-sm">
-//                 +91 72880 41562
-//               </p>
-//             </div>
-//           </div>
-
-//           {/* Social Media */}
-//           <div>
-//             <h4 className="font-semibold text-gray-900 mb-3">
-//               Follow Me
-//             </h4>
-
-//             <div className="flex gap-4">
-//               <a
-//                 href="https://github.com/"
-//                 target="_blank"
-//                 className="p-3 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition"
-//               >
-//                 <Github />
-//               </a>
-
-//               <a
-//                 href="https://linkedin.com/"
-//                 target="_blank"
-//                 className="p-3 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition"
-//               >
-//                 <Linkedin />
-//               </a>
-
-//               <a
-//                 href="https://instagram.com/"
-//                 target="_blank"
-//                 className="p-3 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition"
-//               >
-//                 <Instagram />
-//               </a>
-
-//               <a
-//                 href="https://youtube.com/"
-//                 target="_blank"
-//                 className="p-3 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition"
-//               >
-//                 <Youtube />
-//               </a>
-//             </div>
-//           </div>
-
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-  
-
-
-
-
-
-
-
-
+import { useState } from "react";
 import {
   MapPin,
   Mail,
   Phone,
+  Send,
   Github,
   Linkedin,
-  Instagram,
-  Youtube,
+  MessageCircle,
+  Code2,
 } from "lucide-react";
-import { useState } from "react";
+import SectionHeading from "../shared/SectionHeading";
+import Reveal from "../shared/Reveal";
+
+const inputClass =
+  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 transition focus:border-emerald-400/60 focus:outline-none focus:ring-2 focus:ring-emerald-400/20";
+
+const contactInfo = [
+  { icon: MapPin, label: "Location", value: "Andhra Pradesh, India" },
+  { icon: Mail, label: "Email", value: "vasanthlakshmanjada@gmail.com", href: "mailto:vasanthlakshmanjada@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 72880 41562", href: "tel:+917288041562" },
+];
+
+const socials = [
+  { icon: Github, href: "https://github.com/vasanth715", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/", label: "LinkedIn" },
+  { icon: Code2, href: "https://leetcode.com/u/vasanthlakshman", label: "LeetCode" },
+  { icon: MessageCircle, href: "https://wa.me/917288041562", label: "WhatsApp" },
+];
 
 export default function Contact() {
-
-  // ✅ STATE ADD
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
@@ -195,27 +36,21 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // 'ok' | 'error'
 
-  // ✅ HANDLE CHANGE
-  const handleChange = (e) => {
-    setFormValues({
-      ...formValues,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const handleChange = (e) =>
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
 
-  // ✅ HANDLE SUBMIT (API)
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setLoading(true);
+    setStatus(null);
 
     const data = {
       name: formValues.name,
       email: formValues.email,
-      toMail: "vasanthlakshmanjada@gmail.com", // ✅ YOUR EMAIL
+      toMail: "vasanthlakshmanjada@gmail.com",
       toName: "Vasanth",
       phone: formValues.mobile,
       subject: formValues.subject,
@@ -223,146 +58,159 @@ export default function Contact() {
     };
 
     try {
-      const response = await fetch(
-        "https://api.qrdcard.com/api/url/sendmail",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch("https://api.qrdcard.com/api/url/sendmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
       if (response.ok) {
-        alert("✅ Message sent successfully!");
-        setFormValues({
-          name: "",
-          email: "",
-          mobile: "",
-          subject: "",
-          message: "",
-        });
+        setStatus("ok");
+        setFormValues({ name: "", email: "", mobile: "", subject: "", message: "" });
       } else {
-        alert("❌ Failed to send message");
+        setStatus("error");
       }
     } catch (error) {
       console.error(error);
-      alert("❌ Something went wrong");
+      setStatus("error");
     }
 
     setLoading(false);
   };
 
   return (
-    <section id="contact" className="bg-gray-50 py-20 px-6">
-      <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-2">
+    <section id="contact" className="relative w-full py-24">
+      <div className="pointer-events-none absolute left-1/4 bottom-0 h-80 w-80 rounded-full bg-teal-500/10 blur-[120px]" />
 
-        {/* LEFT SIDE – FORM */}
-        <div>
-          <h2 className="text-4xl font-bold text-gray-900">
-            Get in touch
-          </h2>
-          <p className="mt-3 text-gray-600">
-            Have a question or just want to say hi? I’d love to hear from you.
-          </p>
+      <div className="relative mx-auto max-w-6xl px-6">
+        <SectionHeading
+          eyebrow="Contact"
+          title="Let's Work Together"
+          subtitle="Have a project in mind, a role to fill, or just want to say hi? My inbox is always open."
+        />
 
-          {/* ✅ FORM UPDATED */}
-          <form onSubmit={handleSubmit} className="mt-10 space-y-6">
+        <div className="grid gap-10 lg:grid-cols-5">
+          {/* FORM */}
+          <Reveal className="lg:col-span-3">
+            <form onSubmit={handleSubmit} className="glass-card space-y-5 p-8">
+              <div className="grid gap-5 md:grid-cols-2">
+                <input
+                  type="text"
+                  name="name"
+                  value={formValues.name}
+                  onChange={handleChange}
+                  placeholder="Your name *"
+                  className={inputClass}
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formValues.email}
+                  onChange={handleChange}
+                  placeholder="Your email *"
+                  className={inputClass}
+                  required
+                />
+              </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              <input
-                type="text"
-                name="name"
-                value={formValues.name}
+              <div className="grid gap-5 md:grid-cols-2">
+                <input
+                  type="tel"
+                  name="mobile"
+                  value={formValues.mobile}
+                  onChange={handleChange}
+                  placeholder="Phone number *"
+                  className={inputClass}
+                  required
+                />
+                <input
+                  type="text"
+                  name="subject"
+                  value={formValues.subject}
+                  onChange={handleChange}
+                  placeholder="Subject"
+                  className={inputClass}
+                />
+              </div>
+
+              <textarea
+                rows="5"
+                name="message"
+                value={formValues.message}
                 onChange={handleChange}
-                placeholder="Name *"
-                className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="Tell me about your project or opportunity…"
+                className={inputClass}
                 required
               />
 
-              <input
-                type="email"
-                name="email"
-                value={formValues.email}
-                onChange={handleChange}
-                placeholder="Email *"
-                className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-                required
-              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-3.5 font-semibold text-night-950 shadow-lg shadow-emerald-500/25 transition-transform duration-300 hover:scale-105 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <Send size={17} />
+                {loading ? "Sending…" : "Send Message"}
+              </button>
+
+              {status === "ok" && (
+                <p className="text-sm font-medium text-emerald-300">
+                  ✅ Message sent successfully — I&rsquo;ll get back to you soon!
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm font-medium text-rose-400">
+                  ❌ Something went wrong. Please try again or email me directly.
+                </p>
+              )}
+            </form>
+          </Reveal>
+
+          {/* INFO */}
+          <Reveal delay={0.15} className="lg:col-span-2">
+            <div className="glass-card flex h-full flex-col gap-7 p-8">
+              {contactInfo.map((info) => (
+                <div key={info.label} className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-cyan-400/10 text-emerald-300">
+                    <info.icon size={20} />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="font-semibold text-white">{info.label}</h4>
+                    {info.href ? (
+                      <a
+                        href={info.href}
+                        className="break-words text-sm text-slate-400 transition hover:text-emerald-300"
+                      >
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p className="text-sm text-slate-400">{info.value}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+
+              <div className="mt-auto border-t border-white/10 pt-6">
+                <h4 className="mb-4 font-semibold text-white">Follow Me</h4>
+                <div className="flex gap-3">
+                  {socials.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={s.label}
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition duration-300 hover:-translate-y-1 hover:border-emerald-400/50 hover:text-emerald-300"
+                    >
+                      <s.icon size={19} />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
-
-            <input
-              type="text"
-              name="mobile"
-              value={formValues.mobile}
-              onChange={handleChange}
-              placeholder="Phone Number *"
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-              required
-            />
-
-            <input
-              type="text"
-              name="subject"
-              value={formValues.subject}
-              onChange={handleChange}
-              placeholder="Subject"
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
-
-            <textarea
-              rows="5"
-              name="message"
-              value={formValues.message}
-              onChange={handleChange}
-              placeholder="Enter your message"
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-              required
-            ></textarea>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition"
-            >
-              {loading ? "Sending..." : "Send Your Message"}
-            </button>
-          </form>
+          </Reveal>
         </div>
-
-        {/* RIGHT SIDE – SAME (NO CHANGE) */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 space-y-8">
-          <div className="flex gap-4">
-            <MapPin className="text-green-600" />
-            <div>
-              <h4 className="font-semibold text-gray-900">Location</h4>
-              <p className="text-gray-600 text-sm">Andhra Pradesh, India</p>
-            </div>
-          </div>
-
-          <div className="flex gap-4">
-            <Mail className="text-green-600" />
-            <div>
-              <h4 className="font-semibold text-gray-900">Email</h4>
-              <p className="text-gray-600 text-sm">
-                vasanthlakshmanjada@gmail.com
-              </p>
-            </div>
-          </div>
-
-          <div className="flex gap-4">
-            <Phone className="text-green-600" />
-            <div>
-              <h4 className="font-semibold text-gray-900">Phone</h4>
-              <p className="text-gray-600 text-sm">+91 72880 41562</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   );
 }
-
-
