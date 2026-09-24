@@ -97,6 +97,17 @@ const projectsData = [
     featured: true,
   },
   {
+    title: "Student Marks & Academic Performance Analyzer",
+    description:
+      "Data analysis application examining student academic scores, grade distribution metrics, subject-wise trends, and class rank distributions.",
+    image: "/student-marks.jpg",
+    tech: ["Python", "Pandas", "Matplotlib", "Seaborn", "Streamlit"],
+    github: "https://github.com/vasanth715/student-marks-analyzer",
+    live: null,
+    category: "data-analysis",
+    featured: true,
+  },
+  {
     title: "Customer Churn & Behavioral Analytics",
     description:
       "End-to-end data analytics pipeline identifying customer drop-off trends, cohort churn metrics, and retention patterns.",
