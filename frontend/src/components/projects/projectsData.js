@@ -7,7 +7,7 @@ const projectsData = [
       "Production real-estate website for a property developer — listings, gallery and lead capture.",
     image: "/sribhoomi.png",
     tech: ["React", "Tailwind CSS"],
-    github: "https://github.com/vasanth715/sri-bhoomi-developers",
+    github: "https://github.com/vasanth715/sribhoomi-relestate",
     live: "https://sribhoomidevelopers.com/",
     category: "frontend",
     featured: true,
