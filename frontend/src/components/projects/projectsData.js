@@ -128,14 +128,46 @@ const projectsData = [
     category: "ai",
   },
   {
-    title: "Sports E-commerce UI",
+    title: "Sports E-Commerce Platform",
     description:
-      "E-commerce storefront concept for sports gear — product grids, carts and checkout UI.",
+      "Full-stack e-commerce web application for sports gear — user authentication, dynamic product catalog, shopping cart, and order processing.",
     image: null,
-    tech: ["React", "Tailwind CSS"],
+    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     github: "https://github.com/vasanth715/e-commerse-sports",
     live: null,
-    category: "frontend",
+    category: "fullstack",
+    featured: true,
+  },
+  {
+    title: "E-Learning Platform",
+    description:
+      "Full-stack education portal with course video streaming, interactive student progress tracking, quiz modules, and certificate generation.",
+    image: "/elearning.jpg",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    github: "https://github.com/vasanth715/e-learning_app",
+    live: null,
+    category: "fullstack",
+    featured: true,
+  },
+  {
+    title: "Gopi CRM System",
+    description:
+      "Enterprise customer relationship management portal with lead sales pipelines, deal funnels, contact analytics, and automated reporting.",
+    image: "/gopi-crm.jpg",
+    tech: ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    github: "https://github.com/vasanth715/gopi-crm",
+    live: null,
+    category: "fullstack",
+  },
+  {
+    title: "Invoice & Billing Management System",
+    description:
+      "Comprehensive web app for creating, tracking, and managing client invoices, recurring billing cycles, payment statuses, and revenue analytics.",
+    image: "/invoice.jpg",
+    tech: ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"],
+    github: "https://github.com/vasanth715/Invoice",
+    live: null,
+    category: "fullstack",
   },
 ];
 
