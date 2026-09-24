@@ -85,16 +85,28 @@ export default function ProjectCard({ project }) {
             </span>
           ))}
 
-          {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-auto flex items-center gap-1 text-xs font-semibold text-emerald-300 transition hover:text-emerald-200"
-            >
-              Live <ExternalLink size={12} />
-            </a>
-          )}
+          <div className="ml-auto flex items-center gap-3">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs font-semibold text-slate-300 transition hover:text-emerald-300"
+              >
+                <Github size={13} /> Code
+              </a>
+            )}
+            {project.live && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs font-semibold text-emerald-300 transition hover:text-emerald-200"
+              >
+                Live <ExternalLink size={12} />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>
