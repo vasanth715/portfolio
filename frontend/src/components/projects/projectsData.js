@@ -66,23 +66,44 @@ const projectsData = [
   {
     title: "AI Resume Screener",
     description:
-      "NLP-powered system that parses resumes and ranks candidates against job descriptions.",
+      "NLP-powered system that parses resumes and ranks candidates against job descriptions using machine learning.",
     image: null,
-    tech: ["Java", "NLP", "ML"],
+    tech: ["Python", "NLP", "Scikit-Learn", "FastAPI"],
     github: "https://github.com/vasanth715/ai-resumescreening",
     live: null,
-    category: "fullstack",
+    category: "ai",
     featured: true,
   },
   {
     title: "Energy Anomaly Detection",
     description:
-      "Unsupervised machine-learning pipeline detecting anomalies in energy-consumption data.",
+      "Unsupervised machine-learning pipeline & analytics dashboard detecting anomalies in energy-consumption data.",
     image: null,
-    tech: ["Python", "ML"],
+    tech: ["Python", "Pandas", "Scikit-Learn", "Streamlit"],
     github: "https://github.com/vasanth715/energy-anomaly-detection",
     live: null,
-    category: "fullstack",
+    category: "data-analysis",
+    featured: true,
+  },
+  {
+    title: "Customer Churn & Behavioral Analytics",
+    description:
+      "End-to-end data analytics pipeline identifying customer drop-off trends, cohort churn metrics, and retention patterns.",
+    image: null,
+    tech: ["Python", "Pandas", "SQL", "PowerBI"],
+    github: "https://github.com/vasanth715/customer-churn-analytics",
+    live: null,
+    category: "data-analysis",
+  },
+  {
+    title: "LLM Document Q&A Assistant",
+    description:
+      "Retrieval-Augmented Generation (RAG) assistant querying complex technical documents using semantic search embeddings.",
+    image: null,
+    tech: ["Python", "LangChain", "OpenAI API", "FAISS"],
+    github: "https://github.com/vasanth715/llm-document-qa",
+    live: null,
+    category: "ai",
   },
   {
     title: "Sports E-commerce UI",

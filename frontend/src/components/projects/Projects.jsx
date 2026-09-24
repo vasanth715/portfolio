@@ -7,7 +7,9 @@ import projectsData from "./projectsData";
 const filters = [
   { key: "all", label: "All" },
   { key: "frontend", label: "Frontend" },
-  { key: "fullstack", label: "Full Stack & AI" },
+  { key: "fullstack", label: "Full Stack" },
+  { key: "ai", label: "AI & ML" },
+  { key: "data-analysis", label: "Data Analysis" },
 ];
 
 export default function Projects() {
@@ -26,7 +28,7 @@ export default function Projects() {
         <SectionHeading
           eyebrow="Portfolio"
           title="Things I've Built"
-          subtitle="Production websites shipped for real clients, plus applied AI/ML projects."
+          subtitle="Production web applications, applied AI models, and data analytics dashboards."
         />
 
         {/* Filter bar */}
