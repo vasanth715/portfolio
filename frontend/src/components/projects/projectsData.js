@@ -86,6 +86,17 @@ const projectsData = [
     featured: true,
   },
   {
+    title: "E-Commerce Sales Analytics Dashboard",
+    description:
+      "Interactive data analytics dashboard analyzing sales performance, customer acquisition funnels, monthly revenue trends, and product metrics.",
+    image: "/ecommerce-sales.jpg",
+    tech: ["Python", "Pandas", "PowerBI", "SQL", "Plotly"],
+    github: "https://github.com/vasanth715/ecommerce-sales-analysis",
+    live: null,
+    category: "data-analysis",
+    featured: true,
+  },
+  {
     title: "Customer Churn & Behavioral Analytics",
     description:
       "End-to-end data analytics pipeline identifying customer drop-off trends, cohort churn metrics, and retention patterns.",
