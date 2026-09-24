@@ -69,7 +69,7 @@ const projectsData = [
       "NLP-powered system that parses resumes and ranks candidates against job descriptions.",
     image: null,
     tech: ["Java", "NLP", "ML"],
-    github: "https://github.com/vasanth715/ai-resume-screener",
+    github: "https://github.com/vasanth715/ai-resumescreening",
     live: null,
     category: "fullstack",
     featured: true,
